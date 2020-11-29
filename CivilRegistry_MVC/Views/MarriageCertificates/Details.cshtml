@@ -1,0 +1,90 @@
+﻿@model CivilRegistry_MVC.MarriageCertificate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MarriageCertificate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Partner1.PersonalNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Partner1.PersonalNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Partner1.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Partner1.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Partner1.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Partner1.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Partner2.PersonalNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Partner2.PersonalNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Partner2.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Partner2.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Partner2.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Partner2.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpirationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarriageDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarriageDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MarriageCertificateID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

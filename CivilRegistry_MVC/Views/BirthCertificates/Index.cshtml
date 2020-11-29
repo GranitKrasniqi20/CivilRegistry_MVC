@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CivilRegistry_MVC.BirthCertificate>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Person)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CivilStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Father)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mother)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Person.PersonalNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RegistrationDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ExpirationDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CivilStatus)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Father.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Mother.FirstName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.BirthCertificateID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.BirthCertificateID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.BirthCertificateID })
+    </td>
+</tr>
+}
+
+</table>

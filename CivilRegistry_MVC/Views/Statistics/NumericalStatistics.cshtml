@@ -1,0 +1,15 @@
+﻿@using CivilRegistry_MVC.Models;
+@{
+    ViewBag.Title = "NumericalStatistics";
+}
+
+<h1>Statistikat Numerike:</h1>
+
+<br />
+
+<p>Numri i Lindjeve eshte: @Statistics.BirthNumber()</p>
+<p>Numri i Vdekjeve eshte: @Statistics.DeathNumber()</p>
+<p>Numri i Martesave eshte: @Statistics.MarriageNumber()</p>
+<p>Numri i Migrimeve eshte: @Statistics.MigrationNumber()</p>
+
+@Html.ActionLink("Back to List", "Index")

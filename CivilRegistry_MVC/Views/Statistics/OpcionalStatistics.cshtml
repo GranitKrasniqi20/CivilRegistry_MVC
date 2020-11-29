@@ -1,0 +1,163 @@
+﻿@model IEnumerable<CivilRegistry_MVC.Person>
+
+@{
+    ViewBag.Title = "OpcionalStatistics";
+}
+
+<h2>Opcional Statistics</h2>
+<br />
+
+
+<form>
+    <table class="table">
+        <tr>
+            <td>
+                <label for="from">From:</label>
+                @Html.TextBox("from", null, new { style = "width:50px", required = "h" })
+                <label for="to">To:</label>
+                @Html.TextBox("to", null, new { style = "width:50px", required = "h" })
+
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-group">
+                    Choose Gender
+                    <select class="form-control" name="gender">
+                        <option value="">None</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+            </td>
+
+            <td>
+                <div class="form-group">
+                    Choose Status of Employment
+                    <select class="form-control" name="employmentStatus">
+                        <option value="">None</option>
+                        <option value="Employed">Employed</option>
+                        <option value="Unemployed">Unemployed</option>
+                    </select>
+                </div>
+            </td>
+
+            <td>
+                <div class="form-group">
+                    Choose Qualification
+                    <select class="form-control" name="qualification">
+                        <option value="">None</option>
+                        <option value="Bachelor">Bachelor</option>
+                        <option value="Prof.Training">Profesional Training</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </td>
+
+            <td>
+                <div class="form-group">
+                    Choose Condition of Health
+                    <select class="form-control" name="healthCondition">
+                        <option value="">None</option>
+                        <option value="Positive">Positive</option>
+                        <option value="Negative">Negative</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<table class="table" border="2">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonalNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthPlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Municipality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.EmploymentStatus)*@
+            EmpStatus
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qualification)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.HealthCondition)*@
+            HealthCo
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr style="height:30px">
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Birthday)*@
+                @string.Format("{0:dd/MMM/yyyy}", Convert.ToDateTime(Html.DisplayFor(modelItem => item.Birthday).ToString()))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthPlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Municipality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmploymentStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qualification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HealthCondition)
+            </td>
+        </tr>
+    }
+
+</table>
