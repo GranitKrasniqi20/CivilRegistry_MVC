@@ -146,7 +146,6 @@
     <Compile Include="Models\BirthCertificate.cs" />
     <Compile Include="Models\CivilRegistryModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Models\DbHelper.cs" />
     <Compile Include="Models\DeathCertificate.cs" />
     <Compile Include="Models\FamilyCertificate.cs" />
     <Compile Include="Global.asax.cs">
@@ -235,7 +234,6 @@
     <Content Include="Views\Statistics\OpcionalStatistics.cshtml" />
     <Content Include="Views\Statistics\NumericalStatistics.cshtml" />
     <Content Include="Views\Statistics\Searching.cshtml" />
-    <Content Include="Views\Granit\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
