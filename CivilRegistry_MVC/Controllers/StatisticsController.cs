@@ -1,4 +1,5 @@
 ﻿using CivilRegistry_MVC.Models;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,7 +55,7 @@ namespace CivilRegistry_MVC.Controllers
             }
             else if (option == "FirstName")
             {
-                return View(db.People.Where(x => x.FirstName.StartsWith(search) || search == null).ToList());
+                return View(db.People.Where(x => x.FirstName.Contains(search) || search == null).ToList());
             }
             else if (option == "LastName")
             {
@@ -82,6 +83,7 @@ namespace CivilRegistry_MVC.Controllers
             }
 
             else return View(db.People.ToList());
+
         }
     }
 }
